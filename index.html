@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOONLIGHT EVENTS</title>
+    <script src="./js/jquery-3.6.4.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script>
+        var arrBanner=['festival-header-1.jpg', 'festival-header-2.jpg'];
+        var n=0;
+        function setBanner(){
+            if(n==arrBanner.length) n=0;
+            document.getElementById('banner').src='img/' + arrBanner[n];
+            n++;
+        }
+    </script>
+</head>
+<body onload="setInterval(setBanner,1500)">
+    <div id="container">
+        <div id="header">
+            <div id="header_left">
+                <!-- <h1>MOONLIGHT EVENTS</h1> -->
+                <img src="./img/logo.png" alt="">
+            </div>
+            <div id="header_right">
+                <img src="./img/festival-header-1.jpg" alt="" id="banner">
+            </div>
+        </div>
+        <div id="nav">
+            <ul>
+                <li>
+                    Destinations
+                    <ul class="subnav">
+                        <li>
+                            Asia
+                            <ul class="subnav2">
+                                <li><a href="">Viet nam</a></li>
+                                <li><a href="">India</a></li>
+                                <li><a href="">China</a></li>
+                                <li><a href="">Japan</a></li>
+                                <li><a href="">Thailand</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            Africa
+                            <ul class="subnav2">
+                                <li><a href="">Morocco</a></li>
+                                <li><a href="">South Africa</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            America
+                            <ul class="subnav2">
+                                <li><a href="">USA</a></li>
+                                <li><a href="">Canada</a></li>
+                                <li><a href="">Mexico</a></li>
+                                <li><a href="">Brazil</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            Europe
+                            <ul class="subnav2">
+                                <li><a href="">France</a></li>
+                                <li><a href="">Germany</a></li>
+                                <li><a href="">Italy</a></li>
+                                <li><a href="">Portugal</a></li>
+                                <li><a href="">Turkey</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            Oceania
+                            <ul class="subnav2">
+                                <li><a href="">New Zealand</a></li>
+                                <li><a href="">Samoa</a></li>
+                                <li><a href="">Tahiti</a></li>
+                                <li><a href="">Cook Islands</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    Religions
+                    <ul class="subnav">
+                        <li>Religion 1</li>
+                        <li>Religion 2</li>
+                        <li>Religion 3</li>
+                        <li>Religion 4</li>
+                        <li>Religion 5</li>
+                        <li>Religion 6</li>
+                    </ul>
+                </li>
+                <li>
+                    Months
+                    <ul class="subnav">
+                        <li>Month 1</li>
+                        <li>Month 2</li>
+                        <li>Month 3</li>
+                        <li>Month 4</li>
+                        <li>Month 5</li>
+                        <li>Month 6</li>
+                        <li>Month 7</li>
+                        <li>Month 8</li>
+                        <li>Month 9</li>
+                        <li>Month 10</li>
+                        <li>Month 11</li>
+                        <li>Month 12</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div id="content">
+            <div id="sidebar">
+                <h3>Sidebar</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed scelerisque ligula non diam iaculis dignissim. Aliquam vel semper ligula, at aliquam velit.</p>
+              </div>
+              <div id="main-content">
+                <h2>Main Content</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed scelerisque ligula non diam iaculis dignissim. Aliquam vel semper ligula, at aliquam velit.</p>
+              </div>
+        </div>
+        <div id="footer">
+           <button id="phan_hoi">Gửi phản hồi hoặc thắc mắc cho chúng tôi</button>
+           <script>
+            $(document).ready()(function(){
+                $('#phan_hoi').click(function(){
+                    window.location='contact.html';
+                });
+            });
+           </script>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>MOONLIGHT EVENTS - Festival Portal</title>
+  <style>
+    #ticker {
+  background-color: #eee;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  color: #333;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+#ticker span {
+  display: inline-block;
+  min-width: 150px;
+}
+
+
+  </style>
+</head>
+<body>
+  
+  <div id="ticker"><span id="ticker-content"></span></div>
+ <script>
+    // Lấy dữ liệu ngày giờ hiện tại
+    // Lấy dữ liệu ngày giờ hiện tại
+function getCurrentDateTime() {
+  var now = new Date();
+  var date = now.toLocaleDateString();
+  var time = now.toLocaleTimeString();
+  return date + ' ' + time;
+}
+
+// Lấy vị trí hiện tại của người dùng
+function getCurrentLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else {
+    console.log("Trình duyệt không hỗ trợ tính năng geolocation.");
+  }
+}
+
+// Hiển thị vị trí
+function showPosition(position) {
+  var latitude = position.coords.latitude;
+  var longitude = position.coords.longitude;
+  var location = 'Vị trí: ' + latitude + ', ' + longitude;
+  document.getElementById('ticker').innerHTML = getCurrentDateTime() + ' | ' + location;
+}
+
+// Gọi hàm để lấy vị trí và hiển thị
+getCurrentLocation();
+
+// Cập nhật ngày giờ hiện tại và vị trí mỗi giây
+setInterval(function() {
+  document.getElementById('ticker-content').textContent = getCurrentDateTime() + ' | ' + 'Vị trí: đang cập nhật...';
+  getCurrentLocation();
+}, 1000);
+
+
+ </script>
+  
+</body>
+</html>
